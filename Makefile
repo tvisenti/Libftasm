@@ -6,7 +6,7 @@
 #    By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:23:21 by tvisenti          #+#    #+#              #
-#    Updated: 2017/11/07 16:43:31 by tvisenti         ###   ########.fr        #
+#    Updated: 2017/11/08 14:44:15 by tvisenti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,36 +14,33 @@
 
 NAME =		libfts.a
 
-CCAS = nasm
-CCASFLAGS = -f macho64
+CC = cc -Wall -Wextra -Werror
+AS = nasm
+ASFLAGS = -f macho64
 
 SRC_PATH =	./src
-SRC_NAME =	test.s
-SRC = $(addprefix $(SRC_PATH)/, $(SRC_NAME))
+SRC_NAME =	ft_isdigit.s ft_isalpha.s ft_isalnum.s ft_isascii.s ft_isprint.s
 
-OBJ_PATH = ./obj
-OBJ_NAME = $(SRC_NAME:.s=.o)
-OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_NAME))
+OBJ = $(addprefix $(SRC_PATH)/, $(SRC_NAME:.s=.o))
 
-INC = -I includes
 LINKER = ld
 LINKER_FLAGS = -macosx_version_min 10.8 -lSystem
+
+LIB = -L ./ -lfts
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
 
 clean:
-	rm -rf $(OBJ)
+	@rm -rf $(OBJ)
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all
 
-test:
-	@mkdir -p ./obj
-	@$(CCAS) $(CCASFLAGS) $(SRC) -o $(OBJ)
-	@$(LINKER) $(OBJ) $(LINKER_FLAGS)
+test: $(OBJ) main.c
+	$(CC) main.c $(LIB) -o a.out
