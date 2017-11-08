@@ -6,7 +6,7 @@
 #    By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:23:21 by tvisenti          #+#    #+#              #
-#    Updated: 2017/11/08 14:44:15 by tvisenti         ###   ########.fr        #
+#    Updated: 2017/11/08 14:55:27 by tvisenti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,16 @@ AS = nasm
 ASFLAGS = -f macho64
 
 SRC_PATH =	./src
-SRC_NAME =	ft_isdigit.s ft_isalpha.s ft_isalnum.s ft_isascii.s ft_isprint.s
+SRC_NAME =	ft_isdigit.s \
+			ft_isalpha.s \
+			ft_isalnum.s \
+			ft_isascii.s \
+			ft_isprint.s \
+			ft_bzero.s \
+			ft_strcat.s \
+			ft_tolower.s \
+			ft_toupper.s
+
 
 OBJ = $(addprefix $(SRC_PATH)/, $(SRC_NAME:.s=.o))
 

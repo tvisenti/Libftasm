@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 17:32:19 by tvisenti          #+#    #+#             */
-/*   Updated: 2017/11/08 14:48:29 by tvisenti         ###   ########.fr       */
+/*   Updated: 2017/11/08 16:34:27 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,23 @@ int			main(void)
 	printf("']' => %d\n", ft_isprint(93));
 	printf("'127' => %d\n", ft_isprint(127));
 	printf("'1300' => %d\n", ft_isprint(1300));
+
+	printf("\n---------------------\n");
+	printf("ft_tolower:\n");
+	printf("'a' => %c\n", ft_tolower('a'));
+	printf("'A' => %c\n", ft_tolower('A'));
+	printf("'Z' => %c\n", ft_tolower('Z'));
+	printf("'z' => %c\n", ft_tolower('z'));
+	printf("'1' => %c\n", ft_tolower('1'));
+	printf("'$' => %c\n", ft_tolower('$'));
+
+	printf("\n---------------------\n");
+	printf("ft_toupper:\n");
+	printf("'a' => %c\n", ft_toupper('a'));
+	printf("'A' => %c\n", ft_toupper('A'));
+	printf("'Z' => %c\n", ft_toupper('Z'));
+	printf("'z' => %c\n", ft_toupper('z'));
+	printf("'1' => %c\n", ft_toupper('1'));
+	printf("'$' => %c\n", ft_toupper('$'));
 	return (0);
 }
