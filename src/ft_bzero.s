@@ -1,19 +1,20 @@
-global _ft_tolower
+global _ft_bzero
 
 section .text
-_ft_tolower:
-    mov rax, rdi
-    mov rbx, rsi
-    mov rcx, 0
-    cmp rdi, 0
-	jle return
+_ft_bzero:
+    mov rbx, rdi
+    mov rcx, rsi
+    cmp rbx, 0
+	jz return
+    cmp rcx, 0
+    jle return
 
 bzero:
-    
-    inc rcx
-    dec rbx
-    jmp bzero
-
+    cmp rcx, 0
+    jz return
+    mov byte[rbx], 0
+    inc rbx
+    loop bzero
 
 return:
 	ret

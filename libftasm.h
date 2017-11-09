@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:30:21 by tvisenti          #+#    #+#             */
-/*   Updated: 2017/11/08 14:57:04 by tvisenti         ###   ########.fr       */
+/*   Updated: 2017/11/09 16:02:34 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ int     ft_toupper(int c);
 char    *ft_strcat(char *restrict s1, const char *restrict s2);
 
 void    ft_bzero(void *s, size_t n);
+
+int     ft_puts(const char *s);
 
 #endif
