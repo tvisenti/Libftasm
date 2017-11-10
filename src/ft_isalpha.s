@@ -1,20 +1,22 @@
-global _ft_isalpha
+global	_ft_isalpha
+extern	_ft_isupper
+extern	_ft_islower
 
 section .text
 _ft_isalpha:
-    cmp rdi, 65
-	jl false
-	cmp rdi, 122
-	jg false
-    cmp rdi, 91
-	jl true
-	cmp rdi, 96
-	jg true
-
-false:
+    push rbp
+    mov rbp, rsp
+	call _ft_isupper
+	cmp	rax, 1
+	je true
+	call _ft_islower
+	cmp rax, 1
+	je true
 	mov rax, 0
+	leave
 	ret
 
 true:
-	mov rax, 1
+    mov rax, 1
+	leave
 	ret

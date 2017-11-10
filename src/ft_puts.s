@@ -11,6 +11,8 @@ string:
 
 section .text
 _ft_puts:
+    push rbp
+    mov rbp, rsp
     mov rbx, rdi
     mov rcx, 0
     cmp rbx, 0
@@ -47,4 +49,5 @@ print_null: ; print "(null)\n"
 
 return:
     mov rax, 10
+    leave
     ret

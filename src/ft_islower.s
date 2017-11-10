@@ -1,16 +1,16 @@
-global _ft_isascii
+global _ft_islower
 
 section .text
-_ft_isascii:
+_ft_islower:
     push rbp
     mov rbp, rsp
-    cmp rdi, 0
+    cmp rdi, 97
 	jl false
-	cmp rdi, 127
+	cmp rdi, 122
 	jg false
-	mov rax, 1
+    mov rax, 1
 	leave
-	ret
+    ret
 
 false:
 	mov rax, 0

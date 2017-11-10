@@ -2,6 +2,8 @@ global _ft_strcat
 
 section .text
 _ft_strcat:
+    push rbp
+    mov rbp, rsp
     mov rbx, rdi
     mov rdx, rsi
     cmp rbx, 0
@@ -27,4 +29,5 @@ strcat:
 return:
     mov byte[rbx], 0
     mov rax, rdi
+    leave
 	ret

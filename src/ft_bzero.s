@@ -2,6 +2,8 @@ global _ft_bzero
 
 section .text
 _ft_bzero:
+    push rbp
+    mov rbp, rsp
     mov rbx, rdi
     mov rcx, rsi
     cmp rbx, 0
@@ -17,4 +19,5 @@ bzero:
     loop bzero
 
 return:
+    leave
 	ret
