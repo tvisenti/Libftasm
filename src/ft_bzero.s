@@ -11,12 +11,12 @@ _ft_bzero:
     cmp rcx, 0
     jle return
 
-bzero:
+bzero: ; loop on rbx[i] while rcx > 0
     cmp rcx, 0
     jz return
-    mov byte[rbx], 0
+    mov byte[rbx], 0 ; str[i] = '\0'
     inc rbx
-    loop bzero
+    loop bzero ; rcx autodecrement whit loop
 
 return:
     leave

@@ -6,7 +6,7 @@ global _ft_puts
 section .data
 string:
     .empty db "(null)", 10
-    .empty_len equ $ - string.empty
+    .empty_len equ $ - string.empty ; len of '(null)\n'
     .newline db 10
 
 section .text

@@ -11,16 +11,16 @@ _ft_strcat:
     cmp rdx, 0
     jz return
 
-go_end:
+go_end: ; go to the end of s1
     cmp byte[rbx], 0
     jz strcat
     inc rbx
     jmp go_end
 
-strcat:
+strcat: ; cpy s2[i] in s1[j]
     cmp byte[rdx], 0
     jz return
-    mov al, byte[rdx]
+    mov al, byte[rdx] ; tmp is necessary for cpy
     mov byte[rbx], al
     inc rbx
     inc rdx
