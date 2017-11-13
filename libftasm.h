@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:30:21 by tvisenti          #+#    #+#             */
-/*   Updated: 2017/11/13 12:14:33 by tvisenti         ###   ########.fr       */
+/*   Updated: 2017/11/13 17:35:43 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,8 @@ int     ft_cat(int fd);
 int		ft_islower(int c);
 int		ft_isupper(int c);
 char	*ft_strnew(size_t size);
+int     ft_puts_fd(const char *s, int fd);
+int     ft_abs(int i);
+char    *ft_strclr(char *s);
 
 #endif

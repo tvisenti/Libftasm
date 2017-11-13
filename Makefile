@@ -6,7 +6,7 @@
 #    By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:23:21 by tvisenti          #+#    #+#              #
-#    Updated: 2017/11/13 12:14:57 by tvisenti         ###   ########.fr        #
+#    Updated: 2017/11/13 17:06:36 by tvisenti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,20 +36,20 @@ SRC_NAME =	ft_isdigit.s \
 			ft_cat.s \
 			ft_isupper.s \
 			ft_islower.s \
-			ft_strnew.s
+			ft_strnew.s \
+			ft_abs.s \
+			ft_strclr.s
 
 OBJ = $(addprefix $(SRC_PATH)/, $(SRC_NAME:.s=.o))
-
-LINKER = ld
-LINKER_FLAGS = -macosx_version_min 10.8 -lSystem
-
-LIB = -L ./ -lfts
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
+
+%.o: %.s ./include/libftasm.h
+	nasm -f macho64 $<
 
 clean:
 	@rm -rf $(OBJ)
@@ -60,4 +60,4 @@ fclean: clean
 re: fclean all
 
 test: $(OBJ) main.c
-	$(CC) main.c $(LIB) -o a.out
+	$(CC) main.c libfts.a -o a.out

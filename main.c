@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 17:32:19 by tvisenti          #+#    #+#             */
-/*   Updated: 2017/11/13 12:57:04 by tvisenti         ###   ########.fr       */
+/*   Updated: 2017/11/13 17:54:50 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,13 +161,25 @@ int			main(void)
 
 	printf("\n---------------------\n");
 	printf("ft_strnew:\n");
-	char *new1 = ft_memset(ft_strnew(0), '1', 0);
-	char *new2 = ft_memset(ft_strnew(10), '2', 10);
-	char *new3 = ft_memset(ft_strnew(20), '3', 20);
+	printf("%s\n", ft_memset(ft_strnew(0), '1', 0));
+	printf("%s\n", ft_memset(ft_strnew(10), '2', 10));
+	printf("%s\n", ft_memset(ft_strnew(20), '3', 20));
 
-	printf("%s\n", new1);
-	printf("%s\n", new2);
-	printf("%s\n", new3);
+	printf("\n---------------------\n");
+	printf("ft_abs:\n");
+	printf("0 = %d\n", ft_abs(0));
+	printf("-10 = %d\n", ft_abs(-10));
+	printf("-0 = %d\n", ft_abs(-0));	
+	printf("15 = %d\n", ft_abs(15));
+	printf("-4242 = %d\n", ft_abs(-4242));
+	printf("-123 = %d\n", ft_abs(-123));
+	printf("123 = %d\n", ft_abs(123));
 
+	printf("\n---------------------\n");
+	printf("ft_strclr:\n");
+	printf("Je test = [%s]\n", ft_strclr("Je test"));
+	printf(" = [%s]\n", ft_strclr(""));
+	printf("Je test un truc plus long = [%s]\n", ft_strclr("Je test un truc plus long"));
+	
 	return (0);
 }
