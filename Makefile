@@ -6,7 +6,7 @@
 #    By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:23:21 by tvisenti          #+#    #+#              #
-#    Updated: 2017/11/13 10:35:22 by tvisenti         ###   ########.fr        #
+#    Updated: 2017/11/13 12:14:57 by tvisenti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,13 +29,14 @@ SRC_NAME =	ft_isdigit.s \
 			ft_tolower.s \
 			ft_toupper.s \
 			ft_puts.s \
-			ft_isupper.s \
-			ft_islower.s \
 			ft_strlen.s \
 			ft_memset.s \
 			ft_memcpy.s \
 			ft_strdup.s \
-			ft_cat.s
+			ft_cat.s \
+			ft_isupper.s \
+			ft_islower.s \
+			ft_strnew.s
 
 OBJ = $(addprefix $(SRC_PATH)/, $(SRC_NAME:.s=.o))
 

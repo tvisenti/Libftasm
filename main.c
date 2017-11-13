@@ -6,12 +6,13 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 17:32:19 by tvisenti          #+#    #+#             */
-/*   Updated: 2017/11/13 11:31:16 by tvisenti         ###   ########.fr       */
+/*   Updated: 2017/11/13 12:57:04 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 #include "./libftasm.h"
 
 char *ft_display_bzero(int i)
@@ -157,7 +158,16 @@ int			main(void)
 	printf("%s\n", ft_strdup(""));
 	printf("%s\n", ft_strdup(NULL));
 	printf("%s\n", ft_strdup("CA MARCHE ?"));
-	return (0);
-	
+
+	printf("\n---------------------\n");
+	printf("ft_strnew:\n");
+	char *new1 = ft_memset(ft_strnew(0), '1', 0);
+	char *new2 = ft_memset(ft_strnew(10), '2', 10);
+	char *new3 = ft_memset(ft_strnew(20), '3', 20);
+
+	printf("%s\n", new1);
+	printf("%s\n", new2);
+	printf("%s\n", new3);
+
 	return (0);
 }

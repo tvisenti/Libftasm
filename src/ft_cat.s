@@ -1,5 +1,4 @@
 global _ft_cat
-extern _ft_strlen
 
 %define SYSCALL(nb)	0x2000000 | nb
 %define BUFF_SIZE	255
@@ -7,15 +6,15 @@ extern _ft_strlen
 %define READ		3
 %define WRITE		4
 
-section .bss
-		buffer resb BUFF_SIZE
+section .bss ; var not set
+		buffer resb BUFF_SIZE ; alloc empty BUFF_SIZE 
 
 section .text
 _ft_cat:
 	push rbp
 	mov rbp, rsp
 
-read:
+read: ; read only BUFF_SIZE 
 	push rdi ; push FD in stack
 	mov rax, SYSCALL(READ)
 	mov rsi, buffer
@@ -23,7 +22,7 @@ read:
 	syscall
 	jc fail ; err on read (carry Flag == 1)
 	cmp rax, 0
-	je end ; exit if EOF
+	je end ; enf of file
 
 write:
 	mov rdi, STDOUT
