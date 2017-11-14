@@ -1,6 +1,6 @@
 global _ft_strclr
 extern _ft_strlen
-extern _ft_bzero
+extern _ft_memset
 
 section .text
 _ft_strclr:
@@ -12,10 +12,11 @@ _ft_strclr:
 strclr:
     push rdi
     call _ft_strlen
-    mov rsi, rax
+    mov rdx, rax
     pop rdi
     push rdi
-    call _ft_bzero
+    mov rsi, 0
+    call _ft_memset
     pop rdi
     mov rax, rdi
     leave

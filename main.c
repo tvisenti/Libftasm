@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 17:32:19 by tvisenti          #+#    #+#             */
-/*   Updated: 2017/11/13 17:54:50 by tvisenti         ###   ########.fr       */
+/*   Updated: 2017/11/14 09:23:52 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,9 +177,23 @@ int			main(void)
 
 	printf("\n---------------------\n");
 	printf("ft_strclr:\n");
-	printf("Je test = [%s]\n", ft_strclr("Je test"));
-	printf(" = [%s]\n", ft_strclr(""));
-	printf("Je test un truc plus long = [%s]\n", ft_strclr("Je test un truc plus long"));
-	
+	char clr1[15] = "Je test";
+	char clr2[15] = "";
+	char clr3[25] = "Précédent était vide.";
+
+	printf("Avant le ft_strclr:\n");
+	printf("clr1: %s\n", clr1);
+	printf("clr2: %s\n", clr2);
+	printf("clr3: %s\n", clr3);
+
+	ft_strclr(clr1);
+	ft_strclr(clr2);
+	ft_strclr(clr3);
+
+	printf("\nAprès le ft_strclr:\n");
+	printf("clr1: %s\n", clr1);
+	printf("clr2: %s\n", clr2);
+	printf("clr3: %s\n", clr3);
+
 	return (0);
 }

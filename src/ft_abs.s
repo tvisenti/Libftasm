@@ -4,8 +4,8 @@ section .text
 _ft_abs:
     push rbp
     mov rbp, rsp
-    cmp rdi, 48
-	jle return
+    cmp edi, 0
+	jge return
     not rdi
     inc rdi
 
