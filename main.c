@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 17:32:19 by tvisenti          #+#    #+#             */
-/*   Updated: 2017/11/14 09:23:52 by tvisenti         ###   ########.fr       */
+/*   Updated: 2017/11/14 11:13:47 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int			main(void)
 	printf("'A' => %d\n", ft_isalnum(65));
 	printf("']' => %d\n", ft_isalnum(93));
 	printf("'s' => %d\n", ft_isalnum(115));
-	printf("1300 => %d\n", ft_isalnum(1300));
+	printf("10 => %d\n", ft_isalnum(10));
 
 	printf("\n---------------------\n");
 	printf("ft_isascii:\n");
@@ -61,7 +61,7 @@ int			main(void)
 	printf("'A' => %d\n", ft_isascii(65));
 	printf("']' => %d\n", ft_isascii(93));
 	printf("'s' => %d\n", ft_isascii(115));
-	printf("1300 => %d\n", ft_isascii(1300));
+	printf("10 => %d\n", ft_isascii(10));
 
 	printf("\n---------------------\n");
 	printf("ft_isprint:\n");
@@ -70,7 +70,7 @@ int			main(void)
 	printf("'A' => %d\n", ft_isprint(65));
 	printf("']' => %d\n", ft_isprint(93));
 	printf("127 => %d\n", ft_isprint(127));
-	printf("1300 => %d\n", ft_isprint(1300));
+	printf("10 => %d\n", ft_isprint(10));
 
 	printf("\n---------------------\n");
 	printf("ft_tolower:\n");
@@ -120,12 +120,12 @@ int			main(void)
 
 	printf("\n---------------------\n");
 	printf("ft_strlen:\n");
-	printf("True: %zu = Mine: %zu\n", strlen("Test 1"), ft_strlen("Test 1"));
-	printf("True: %zu = Mine: %zu\n", strlen("a"), ft_strlen("a"));
-	printf("True: %zu = Mine: %zu\n", strlen(""), ft_strlen(""));
-	printf("True: %zu = Mine: %zu\n", strlen("Test 123456789"), ft_strlen("Test 123456789"));
-	printf("True: %zu = Mine: %zu\n", strlen("\0Test 123456"), ft_strlen("\0Test 123456"));
-	printf("True: %zu = Mine: %zu\n", strlen("Test 123456\0789"), ft_strlen("Test 123456\0789"));
+	printf("True: [%zu] = Mine: [%zu]\n", strlen("Test 1"), ft_strlen("Test 1"));
+	printf("True: [%zu] = Mine: [%zu]\n", strlen("a"), ft_strlen("a"));
+	printf("True: [%zu] = Mine: [%zu]\n", strlen(""), ft_strlen(""));
+	printf("True: [%zu] = Mine: [%zu]\n", strlen("Test 123456789"), ft_strlen("Test 123456789"));
+	printf("True: [%zu] = Mine: [%zu]\n", strlen("\0Test 123456"), ft_strlen("\0Test 123456"));
+	printf("True: [%zu] = Mine: [%zu]\n", strlen("Test 123456\0789"), ft_strlen("Test 123456\0789"));
 
 	printf("\n---------------------\n");
 	printf("ft_memset:\n");
@@ -135,9 +135,9 @@ int			main(void)
 	ft_memset(tab[0], 48, 3);
 	ft_memset(tab[1], 72, 3);
 	ft_memset(tab[2], 90, 3);
-	printf("%c = %c\n", tab[0][0], tab[0][2]);
-	printf("%c = %c\n", tab[1][0], tab[1][2]);
-	printf("%c = %c\n", tab[2][0], tab[2][2]);
+	printf("[%c] = [%c]\n", tab[0][0], tab[0][2]);
+	printf("[%c] = [%c]\n", tab[1][0], tab[1][2]);
+	printf("[%c] = [%c]\n", tab[2][0], tab[2][2]);
 
 	printf("\n---------------------\n");
 	printf("ft_memcpy:\n");
@@ -145,25 +145,42 @@ int			main(void)
 	char src1[10] = "ut, ";
 	char src2[10] = "ca va ?";
 	char src3[10] = "";
-	printf("%s\n", ft_memcpy(dst, dst, 1));
-	printf("%s\n", ft_memcpy(dst, src1, 0));
-	printf("%s\n", ft_memcpy(dst, src2, 1));
-	printf("%s\n", ft_memcpy(dst, src2, 5));
-	printf("%s\n", ft_memcpy(dst, src3, 3));
+	printf("[%s]\n", ft_memcpy(dst, dst, 1));
+	printf("[%s]\n", ft_memcpy(dst, src1, 0));
+	printf("[%s]\n", ft_memcpy(dst, src2, 1));
+	printf("[%s]\n", ft_memcpy(dst, src2, 5));
+	printf("[%s]\n", ft_memcpy(dst, src3, 3));
 
 
 	printf("\n---------------------\n");
 	printf("ft_strdup:\n");
-	printf("%s\n", ft_strdup("Yo"));
-	printf("%s\n", ft_strdup(""));
-	printf("%s\n", ft_strdup(NULL));
-	printf("%s\n", ft_strdup("CA MARCHE ?"));
+	printf("[%s]\n", ft_strdup("Yo"));
+	printf("[%s]\n", ft_strdup(""));
+	printf("[%s]\n", ft_strdup(NULL));
+	printf("[%s]\n", ft_strdup("CA MARCHE ?"));
 
 	printf("\n---------------------\n");
+	printf("BONUS");	
+	printf("\n---------------------\n\n");
+
+	printf("ft_isupper:\n");
+	printf("0 = %d\n", ft_isupper(0));
+	printf("'A' = %d\n", ft_isupper('A'));
+	printf("'a' = %d\n", ft_isupper('a'));	
+	printf("'8' = %d\n", ft_isupper('8'));
+
+	printf("\n---------------------\n");
+	printf("ft_islower:\n");
+	printf("0 = %d\n", ft_islower(0));
+	printf("'A' = %d\n", ft_islower('A'));
+	printf("'a' = %d\n", ft_islower('a'));	
+	printf("'8' = %d\n", ft_islower('8'));
+	
+	printf("\n---------------------\n");	
 	printf("ft_strnew:\n");
-	printf("%s\n", ft_memset(ft_strnew(0), '1', 0));
-	printf("%s\n", ft_memset(ft_strnew(10), '2', 10));
-	printf("%s\n", ft_memset(ft_strnew(20), '3', 20));
+	printf("[%s]\n", ft_memset(ft_strnew(0), '1', 0));
+	printf("[%s]\n", ft_memset(ft_strnew(10), '2', 10));
+	printf("[%s]\n", ft_memset(ft_strnew(20), '3', 20));
 
 	printf("\n---------------------\n");
 	printf("ft_abs:\n");
@@ -182,18 +199,18 @@ int			main(void)
 	char clr3[25] = "Précédent était vide.";
 
 	printf("Avant le ft_strclr:\n");
-	printf("clr1: %s\n", clr1);
-	printf("clr2: %s\n", clr2);
-	printf("clr3: %s\n", clr3);
+	printf("clr1: [%s]\n", clr1);
+	printf("clr2: [%s]\n", clr2);
+	printf("clr3: [%s]\n", clr3);
 
 	ft_strclr(clr1);
 	ft_strclr(clr2);
 	ft_strclr(clr3);
 
 	printf("\nAprès le ft_strclr:\n");
-	printf("clr1: %s\n", clr1);
-	printf("clr2: %s\n", clr2);
-	printf("clr3: %s\n", clr3);
+	printf("clr1: [%s]\n", clr1);
+	printf("clr2: [%s]\n", clr2);
+	printf("clr3: [%s]\n", clr3);
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:30:21 by tvisenti          #+#    #+#             */
-/*   Updated: 2017/11/13 17:35:43 by tvisenti         ###   ########.fr       */
+/*   Updated: 2017/11/14 11:18:04 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void    *ft_memset(void *b, int c, size_t len);
 void    *ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 char    *ft_strdup(const char *s1);
 
-int     ft_cat(int fd);
+void    ft_cat(int fd);
 
 /*
 ** BONUS

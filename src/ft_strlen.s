@@ -2,7 +2,7 @@ global _ft_strlen
 
 section .text
 
-_ft_strlen: ; Searching a particular character in register al
+_ft_strlen: ; searching a particular character in register al
 	push rbp
 	mov rbp, rsp
 	cmp rdi, 0

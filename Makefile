@@ -6,7 +6,7 @@
 #    By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:23:21 by tvisenti          #+#    #+#              #
-#    Updated: 2017/11/13 17:06:36 by tvisenti         ###   ########.fr        #
+#    Updated: 2017/11/14 11:18:39 by tvisenti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ AS = nasm
 ASFLAGS = -f macho64
 
 SRC_PATH =	./src
+
 SRC_NAME =	ft_isdigit.s \
 			ft_isalpha.s \
 			ft_isalnum.s \
@@ -48,16 +49,16 @@ $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 
-%.o: %.s ./include/libftasm.h
-	nasm -f macho64 $<
-
 clean:
 	@rm -rf $(OBJ)
 
 fclean: clean
-	@rm -rf $(NAME)
+	@rm -rf $(NAME) a.out
 
 re: fclean all
 
 test: $(OBJ) main.c
 	$(CC) main.c libfts.a -o a.out
+
+test_cat: $(OBJ) main_cat.c
+	$(CC) main_cat.c libfts.a -o a.out
