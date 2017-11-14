@@ -6,7 +6,7 @@
 #    By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:23:21 by tvisenti          #+#    #+#              #
-#    Updated: 2017/11/14 11:18:39 by tvisenti         ###   ########.fr        #
+#    Updated: 2017/11/14 11:59:24 by tvisenti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,3 @@ re: fclean all
 
 test: $(OBJ) main.c
 	$(CC) main.c libfts.a -o a.out
-
-test_cat: $(OBJ) main_cat.c
-	$(CC) main_cat.c libfts.a -o a.out
